@@ -127,14 +127,14 @@ function deleteRows(rows){
 
   
   try {
-      //const client = await pool.connect()
+      const client = await pool.connect()
 
       rows.forEach(function(element) {
         console.log("DELETE FROM wishlist WHERE bookid =" + element + ";");
-        //const result = await client.query("DELETE FROM wishlist WHERE bookid =" + element + ";");
+        const result = await client.query("DELETE FROM wishlist WHERE bookid =" + element + ";");
    });
       
-      //client.release();
+      client.release();
 
     } catch (err) {
       console.error(err);
