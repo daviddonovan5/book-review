@@ -76,8 +76,9 @@ express()
 })
 })
 
-   .post('/add', function (req, res) {
-    let title = req.body.addTitle;
+.post('/add', async (req, res) => {
+
+  let title = req.body.addTitle;
     let author = req.body.addAuthor;
     let rate = req.body.addRate;
     let pic = req.body.addPic;
@@ -90,14 +91,17 @@ express()
     try {
       const client = await pool.connect()
       const result = await client.query("INSERT INTO wishList(title, author, rate, pic) VALUES ('TEST', 'TEST', 4.12, 'TEST');");
-      
+      const results = { 'results': (result) ? result.rows : null};
+      res.render('pages/wishlist', results );
       client.release();
     } catch (err) {
       console.error(err);
       res.send("Error" + err);
     }
+  })
 
-})
+
+   
 
 
   
