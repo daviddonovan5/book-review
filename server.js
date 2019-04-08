@@ -94,6 +94,7 @@ express()
       const results = { 'results': (result) ? result.rows : null};
       res.render('pages/wishlist', results );
       client.release();
+      res.render('pages/add', results );
     } catch (err) {
       console.error(err);
       res.send("Error" + err);
