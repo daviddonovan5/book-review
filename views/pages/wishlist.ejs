@@ -15,7 +15,8 @@
 	<% include ../partials/search.ejs %>
 <h2> <CENTER> Your Wishlist</CENTER></h2>
 
-
+ <form method="post" action="/delete">
+ 	<input type="hidden" name="hideDelete" id="hideDelete" value="">
 <table id="wishlist">
 	<tr>
 
@@ -27,7 +28,7 @@
 	</tr>
 	<% results.forEach(function(r) { %>
 	<tr>
-		<td> <img src=" <%= r.pic %>">
+		<td> <img src=" <%= r.pic %>"></td>
 		<td><%= r.title %></td>
 		<td><%= r.author %></td>
 		<td><%= r. rate %></td>
@@ -37,6 +38,8 @@
 
 
 </table>
+</form>
+
 
     
         
