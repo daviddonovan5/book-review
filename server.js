@@ -103,6 +103,28 @@ express()
     
   })
 
+.post('/delete', async (req, res) => {
+
+    let bookID = req.body.remove;
+
+    console.log("The Button is working");
+    console.log(bookID);
+    
+
+    //try {
+    //  const client = await pool.connect()
+    //  const result = await client.query("INSERT INTO wishList(title, author, rate, pic) VALUES ('" + title  +"', '" + author + "', " + rate + ", '" + pic + "');");
+    //  const results = { 'results': (result) ? result.rows : null};
+    //  res.render('pages/add', results );
+    //  client.release();
+
+    //} catch (err) {
+    //  console.error(err);
+    //  res.send("Error" + err);
+   // }
+    
+  })
+
 
    
 
