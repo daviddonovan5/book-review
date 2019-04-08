@@ -109,7 +109,7 @@ express()
 
     console.log("The Button is working");
     deleteRows(bookID);
-    res.render('pages/delete', results );
+    res.render('pages/delete');
   
 
     
