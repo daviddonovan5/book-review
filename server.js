@@ -87,10 +87,11 @@ express()
     console.log(author);
     console.log(rate);
     console.log(pic);
+    
 
     try {
       const client = await pool.connect()
-      const result = await client.query("INSERT INTO wishList(title, author, rate, pic) VALUES ('TEST', 'TEST', 4.12, 'TEST');");
+      const result = await client.query("INSERT INTO wishList(title, author, rate, pic) VALUES ('" + title  +"', '" + author + "', " + rate + ", '" + pic + "');");
       const results = { 'results': (result) ? result.rows : null};
       res.render('pages/add', results );
       client.release();
