@@ -130,7 +130,7 @@ function deleteRows(rows){
       //const client = await pool.connect()
 
       rows.forEach(function(element) {
-        console.log(element);
+        console.log("DELETE FROM wishlist WHERE bookid =" + element + ";");
         //const result = await client.query("DELETE FROM wishlist WHERE bookid =" + element + ";");
    });
       
