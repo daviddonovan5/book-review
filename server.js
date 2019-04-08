@@ -76,7 +76,7 @@ express()
 })
 })
 
-.post('/wishlist', async (req, res) => {
+.post('/add', async (req, res) => {
 
   let title = req.body.addTitle;
     let author = req.body.addAuthor;
@@ -98,7 +98,7 @@ express()
       console.error(err);
       res.send("Error" + err);
     }
-     res.render('wishlist');
+    
   })
 
 
