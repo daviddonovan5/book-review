@@ -123,16 +123,16 @@ express()
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
 
-//function deleteRows(rows){
+function deleteRows(rows){
 
   
-//rows.forEach(function(element) {
+rows.forEach(function(element) {
 
   //try {
     //  const client = await pool.connect()
 
       
-      //  console.log("DELETE FROM wishlist WHERE bookid =" + element + ";");
+        console.log("DELETE FROM wishlist WHERE bookid =" + element + ";");
       //  const result = await client.query("DELETE FROM wishlist WHERE bookid =" + element);
    
       
@@ -143,7 +143,8 @@ express()
       //res.send("Error" + err);
     //}
     
-//});
+}
+};
 
 
   
