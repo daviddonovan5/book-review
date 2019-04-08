@@ -76,7 +76,7 @@ express()
 })
 })
 
-.post('/add', async (req, res) => {
+.post('/', async (req, res) => {
 
   let title = req.body.addTitle;
     let author = req.body.addAuthor;
