@@ -124,22 +124,21 @@ express()
 
 function deleteRows(rows){
 
-  rows.forEach(function(element) {
-  console.log(element);
-});
-  //try {
-  //    const client = await pool.connect()
+  
+  try {
+      const client = await pool.connect()
 
+      rows.forEach(function(element) {
+        console.log(element);
+        const result = await client.query("DELETE FROM wishlist WHERE bookid =" + element + ";");
+   });
+      res.render('pages/delete', results );
+      client.release();
 
-   //   const result = await client.query("INSERT INTO wishList(title, author, rate, pic) VALUES ('" + title  +"', '" + author + "', " + rate + ", '" + pic + "');");
-   //   const results = { 'results': (result) ? result.rows : null};
-   //   res.render('pages/add', results );
-   //   client.release();
-
-    //} catch (err) {
-    //  console.error(err);
-    //  res.send("Error" + err);
-   // }
+    } catch (err) {
+      console.error(err);
+      res.send("Error" + err);
+    }
     
 }
 
