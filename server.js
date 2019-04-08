@@ -125,11 +125,9 @@ express()
 
 function deleteRows(rows){
 
-  
-rows.forEach(function(element) {
-  console.log("DELETE FROM wishlist WHERE bookid =" + element + ";");
+  console.log(rows);
 }
-};
+
 
 
   
