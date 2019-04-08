@@ -111,17 +111,6 @@ express()
     deleteRows(bookID);
     
 
-    //try {
-    //  const client = await pool.connect()
-    //  const result = await client.query("INSERT INTO wishList(title, author, rate, pic) VALUES ('" + title  +"', '" + author + "', " + rate + ", '" + pic + "');");
-    //  const results = { 'results': (result) ? result.rows : null};
-    //  res.render('pages/add', results );
-    //  client.release();
-
-    //} catch (err) {
-    //  console.error(err);
-    //  res.send("Error" + err);
-   // }
     
   })
 
@@ -135,7 +124,23 @@ express()
 
 function deleteRows(rows){
 
-  console.log(rows);
+  rows.forEach(function(element) {
+  console.log(element);
+});
+  //try {
+  //    const client = await pool.connect()
+
+
+   //   const result = await client.query("INSERT INTO wishList(title, author, rate, pic) VALUES ('" + title  +"', '" + author + "', " + rate + ", '" + pic + "');");
+   //   const results = { 'results': (result) ? result.rows : null};
+   //   res.render('pages/add', results );
+   //   client.release();
+
+    //} catch (err) {
+    //  console.error(err);
+    //  res.send("Error" + err);
+   // }
+    
 }
 
 
