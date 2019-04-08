@@ -6,7 +6,7 @@ const { Pool } = require('pg');
 const SimpleGoodreads = require('simple-goodreads');
 
 const bodyParser = require('body-parser');
-
+const button = document.getElementById('add');
 
 var goodreads = new SimpleGoodreads();
 
@@ -64,10 +64,6 @@ express()
         bookRate,
         bookPic,
         error: null});
-        const button = document.getElementById('add');
-        button.addEventListener('click', function(e) {
-        console.log('button was clicked')
-      });
      }
      catch (err) {
       console.error(err);
