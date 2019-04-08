@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+</head>
+
+<body>
+
+
+<div class="container">
+<h2>Your Wish List</h2>
+
+<ul>
+    <% results.forEach(function(r) { %>
+        <li><%= r.title %> - <%= r.author %></li>
+    <% }); %>
+</ul>
+
+</div>
+
+</body>
+</html>

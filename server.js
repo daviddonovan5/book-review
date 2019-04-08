@@ -22,7 +22,7 @@ express()
   .get('/', (req, res) => res.render('pages/index'))
   .get('/test', (req, res) => res.render('pages/db'))
  
-  .get('/db', async (req, res) => {
+  .get('/wishlist', async (req, res) => {
     try {
       const client = await pool.connect()
       const result = await client.query('SELECT * FROM wishlist');
