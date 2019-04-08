@@ -123,27 +123,27 @@ express()
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
 
-function deleteRows(rows){
+//function deleteRows(rows){
 
   
-rows.forEach(function(element) {
+//rows.forEach(function(element) {
 
-  try {
-      const client = await pool.connect()
+  //try {
+    //  const client = await pool.connect()
 
       
-        console.log("DELETE FROM wishlist WHERE bookid =" + element + ";");
-        const result = await client.query("DELETE FROM wishlist WHERE bookid =" + element);
+      //  console.log("DELETE FROM wishlist WHERE bookid =" + element + ";");
+      //  const result = await client.query("DELETE FROM wishlist WHERE bookid =" + element);
    
       
-      client.release();
+      //client.release();
 
-    } catch (err) {
-      console.error(err);
-      res.send("Error" + err);
-    }
+    //} catch (err) {
+      //console.error(err);
+      //res.send("Error" + err);
+    //}
     
-});
+//});
 
 
   
