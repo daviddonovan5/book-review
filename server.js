@@ -130,7 +130,7 @@ function deleteRows(rows){
 
       rows.forEach(function(element) {
         console.log(element);
-        const result = await client.query("DELETE FROM wishlist WHERE bookid =" + element + ";");
+        //const result = await client.query("DELETE FROM wishlist WHERE bookid =" + element + ";");
    });
       res.render('pages/delete', results );
       client.release();
