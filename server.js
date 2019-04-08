@@ -6,8 +6,6 @@ const { Pool } = require('pg');
 const SimpleGoodreads = require('simple-goodreads');
 
 const bodyParser = require('body-parser');
-const button = document.getElementById('add');
-
 var goodreads = new SimpleGoodreads();
 
 const pool = new Pool({
@@ -15,12 +13,15 @@ const pool = new Pool({
   ssl: true
 });
 
+
+
 express()
 
   .use(express.static(path.join(__dirname, 'public')))
   .use(bodyParser.urlencoded({ extended: true }))
   .set('views', path.join(__dirname, 'views'))
   .set('view engine', 'ejs')
+  .get('/test', (req, res) => res.render('pages/index'))
   
  
   .get('/', async (req, res) => {
@@ -64,13 +65,40 @@ express()
         bookRate,
         bookPic,
         error: null});
-     }
+       
+
+     console.log ("The post is complted");
+   }
      catch (err) {
       console.error(err);
       res.render('pages/error', {book: null, error: 'Error, please try again'})
     }
 })
 })
+
+   .post('/add', function (req, res) {
+    let title = req.body.addTitle;
+    let author = req.body.addAuthor;
+    let rate = req.body.addRate;
+    let pic = req.body.addPic;
+    console.log("The Button is working");
+    console.log(title);
+    console.log(author);
+    console.log(rate);
+    console.log(pic);
+
+    try {
+      const client = await pool.connect()
+      const result = await client.query("INSERT INTO wishList(title, author, rate, pic) VALUES ('TEST', 'TEST', 4.12, 'TEST');");
+      
+      client.release();
+    } catch (err) {
+      console.error(err);
+      res.send("Error" + err);
+    }
+
+})
+
 
   
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))

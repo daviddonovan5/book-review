@@ -17,7 +17,14 @@
 
       </fieldset>
 
-      <button id="add">Click to Add to Wish List</button>
+      <form method="post" action="/add">
+        <input type="hidden" name="addTitle" value="<%=bookTitle%>">
+        <input type="hidden" name="addAuthor" value="<%=bookAuthor%>">
+        <input type="hidden" name="addRate" value="<%=bookRate%>">
+        <input type="hidden" name="addPic" value="<%=bookPic%>">
+        <input type="submit" class="ghost-button" value="Add to Wishlist">
+      </form>
+      
       <form action = "/wishlist">
           <input type="submit" class="ghost-button" value="View Wish List">
         </form>
