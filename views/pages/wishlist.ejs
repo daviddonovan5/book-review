@@ -8,13 +8,31 @@
 
 
 <div class="container">
-<h2>Database Results</h2>
+<h2>Your Wishlist</h2>
+<% results.forEach(function(r) { %>
+<table>
+	<tr>
+		<th></th>
+		<th>TITLE</th>
+		<th>AUTHOR</th>
+		<th>RATE</th>
+		<th></th>
+	</tr>
+	<tr>
+		<td> <img src="<%= r.pic %>"></td>
+		<td><%= r.title %></td>
+		<td><%= r.author %></td>
+		<td><%= r. rate %></td>
+		<td> remove</td>
+	</tr>
+	
 
-<ul>
-    <% results.forEach(function(r) { %>
-        <li><%= r.title %> - <%= r.author %></li>
+
+</table>
+
+    
+        
     <% }); %>
-</ul>
 
 </div>
 
