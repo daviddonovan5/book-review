@@ -89,3 +89,7 @@ p {
   text-align: left;
   color: blue;
 }
+#error {
+  text-align: center;
+  color: red;
+}
