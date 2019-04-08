@@ -126,12 +126,23 @@ express()
 function deleteRows(rows){
 
   
+try {
+      const client = await pool.connect()
+      const result = await client.query('SELECT * FROM wishlist');
+      const results = { 'results': (result) ? result.rows : null};
+      res.render('pages/wishlist', results );
+      client.release();
+    } catch (err) {
+      console.error(err);
+      res.send("Error" + err);
+    }
+
   try {
       const client = await pool.connect()
 
       rows.forEach(function(element) {
         console.log("DELETE FROM wishlist WHERE bookid =" + element + ";");
-        const result = await client.query("DELETE FROM wishlist WHERE bookid =" + element + ";");
+        const result = await client.query("DELETE FROM wishlist WHERE bookid =" + element);
    });
       
       client.release();
