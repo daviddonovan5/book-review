@@ -98,6 +98,7 @@ express()
       console.error(err);
       res.send("Error" + err);
     }
+     res.render('wishlist');
   })
 
 
