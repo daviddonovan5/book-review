@@ -109,7 +109,8 @@ express()
 
     console.log("The Button is working");
     deleteRows(bookID);
-    
+    res.render('pages/delete', results );
+  
 
     
   })
@@ -132,7 +133,7 @@ function deleteRows(rows){
         console.log(element);
         //const result = await client.query("DELETE FROM wishlist WHERE bookid =" + element + ";");
    });
-      res.render('pages/delete', results );
+      
       //client.release();
 
     } catch (err) {
