@@ -108,7 +108,7 @@ express()
     let bookID = req.body.remove;
 
     console.log("The Button is working");
-    //deleteRows(bookID);
+    deleteRows(bookID);
     res.render('pages/delete');
   
 
