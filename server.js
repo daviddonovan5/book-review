@@ -19,10 +19,10 @@ express()
   .use(bodyParser.urlencoded({ extended: true }))
   .set('views', path.join(__dirname, 'views'))
   .set('view engine', 'ejs')
-  .get('/', (req, res) => res.render('pages/wishlist'))
-  .get('/test', (req, res) => res.render('pages/db'))
+  //.get('/', (req, res) => res.render('pages/wishlist'))
+  
  
-  .get('/wishlist', async (req, res) => {
+  .get('/', async (req, res) => {
     try {
       const client = await pool.connect()
       const result = await client.query('SELECT * FROM wishlist');
