@@ -9,17 +9,18 @@
 
 <div class="container">
 <h2>Your Wishlist</h2>
-<% results.forEach(function(r) { %>
+
 <table>
 	<tr>
-		
+		<th></th>
 		<th>TITLE</th>
 		<th>AUTHOR</th>
 		<th>RATE</th>
 		<th></th>
 	</tr>
+	<% results.forEach(function(r) { %>
 	<tr>
-		
+		<td> <img src="<%= r.pic %>"></td>
 		<td><%= r.title %></td>
 		<td><%= r.author %></td>
 		<td><%= r. rate %></td>
