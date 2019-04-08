@@ -19,7 +19,7 @@ express()
   .use(bodyParser.urlencoded({ extended: true }))
   .set('views', path.join(__dirname, 'views'))
   .set('view engine', 'ejs')
-  .get('/', (req, res) => res.render('pages/index'))
+  .get('/', (req, res) => res.render('pages/wishlist'))
   .get('/test', (req, res) => res.render('pages/db'))
  
   .get('/wishlist', async (req, res) => {
