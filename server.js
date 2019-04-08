@@ -108,7 +108,7 @@ express()
     let bookID = req.body.remove;
 
     console.log("The Button is working");
-    console.log(bookID);
+    deleteRows(bookID);
     
 
     //try {
@@ -132,6 +132,11 @@ express()
   
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
+
+function deleteRows(rows){
+
+  console.log(rows);
+}
 
 
   
