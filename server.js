@@ -92,9 +92,9 @@ express()
       const client = await pool.connect()
       const result = await client.query("INSERT INTO wishList(title, author, rate, pic) VALUES ('TEST', 'TEST', 4.12, 'TEST');");
       const results = { 'results': (result) ? result.rows : null};
-      res.render('pages/wishlist', results );
-      client.release();
       res.render('pages/add', results );
+      client.release();
+
     } catch (err) {
       console.error(err);
       res.send("Error" + err);
