@@ -108,7 +108,7 @@ express()
     let bookID = req.body.remove;
 
     console.log("The Button is working");
-    deleteRows(14);
+    deleteRows(bookID);
     res.render('pages/delete');
   
 
@@ -125,17 +125,7 @@ express()
 
 function deleteRows(rows){
 
-  
-    try {
-      const client = await pool.connect()
-      const result = await client.query("DELETE FROM wishList where bookid =" rows;
-      const results = { 'results': (result) ? result.rows : null};
-      client.release();
-
-    } catch (err) {
-      console.error(err);
-      res.send("Error" + err);
-    }
+  console.log(rows);
 }
 
 
