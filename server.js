@@ -113,7 +113,7 @@ express()
     const client = await pool.connect()
       const result = await client.query("DELETE FROM wishList WHERE bookid ="+ bookID + ";");
       const results = { 'results': (result) ? result.rows : null};
-      res.render('pages/delete', results );
+      res.render('pages/wishlist', results );
       client.release();
 
     } catch (err) {
