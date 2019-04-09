@@ -108,9 +108,12 @@ express()
     let bookID = req.body.remove;
 
     console.log("The Button is working");
+    for (var i = 0, len = bookID.length; i < bookID; i++) {
+  
+
     try {
     const client = await pool.connect()
-      const result = await client.query("DELETE FROM wishList WHERE bookid =14;");
+      const result = await client.query("DELETE FROM wishList WHERE bookid =" + bookID[i]+ ";");
       const results = { 'results': (result) ? result.rows : null};
       res.render('pages/delete', results );
       client.release();
@@ -119,6 +122,7 @@ express()
       console.error(err);
       res.send("Error" + err);
     }
+  }
   })
 
 
