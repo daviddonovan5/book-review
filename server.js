@@ -71,7 +71,7 @@ express()
    }
      catch (err) {
       console.error(err);
-      res.render('pages/error', {book: null, error: 'Error, please try again'})
+      res.render('/', {book: null, error: 'Error, please try again'})
     }
 })
 })
