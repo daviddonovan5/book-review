@@ -125,7 +125,7 @@ express()
 
 function deleteRows(rows){
 
-  console.log(rows);
+  console.log("delete" + rows);
 }
 
 
