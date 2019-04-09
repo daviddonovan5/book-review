@@ -108,11 +108,17 @@ express()
     let bookID = req.body.remove;
 
     console.log("The Button is working");
-    deleteRows(bookID);
-    res.render('pages/delete');
-  
+    try {
+    const client = await pool.connect()
+      const result = await client.query("INSERT INTO wishList(title, author, rate, pic) VALUES ('TESTING', 'TESTING', 4, 'TESTING');");
+      const results = { 'results': (result) ? result.rows : null};
+      res.render('pages/delete', results );
+      client.release();
 
-    
+    } catch (err) {
+      console.error(err);
+      res.send("Error" + err);
+    }
   })
 
 
@@ -123,23 +129,6 @@ express()
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
 
-function deleteRows(rows){
-
-  console.log("delete" + rows);
-
-
-    try {
-      const client = await pool.connect()
-      const result = await client.query("INSERT INTO wishList(title, author, rate, pic) VALUES ('TESTING', 'TESTING', 4, 'TESTING');");
-      const results = { 'results': (result) ? result.rows : null};
-      res.render('pages/add', results );
-      client.release();
-
-    } catch (err) {
-      console.error(err);
-      res.send("Error" + err);
-    }
-}
 
 
 
