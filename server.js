@@ -110,7 +110,7 @@ express()
     console.log("The Button is working");
     try {
     const client = await pool.connect()
-      const result = await client.query("INSERT INTO wishList(title, author, rate, pic) VALUES ('TESTING', 'TESTING', 4, 'TESTING');");
+      const result = await client.query("DELETE FROM wishList WHERE bookid =14;");
       const results = { 'results': (result) ? result.rows : null};
       res.render('pages/delete', results );
       client.release();
