@@ -107,14 +107,14 @@ express()
 
     let bookID = req.body.remove;
 
-    console.log("The Button is working");
-    bookID.forEach(function(element) {
-  console.log(element);
+    console.log("The remove Button is working");
+    
+  
 
 
     try {
     const client = await pool.connect()
-      const result = await client.query("DELETE FROM wishList WHERE bookid ="+ element + ";");
+      const result = await client.query("DELETE FROM wishList WHERE bookid ="+ bookID + ";");
       const results = { 'results': (result) ? result.rows : null};
       res.render('pages/delete', results );
       client.release();
@@ -123,7 +123,7 @@ express()
       console.error(err);
       res.send("Error" + err);
     }
-    });
+    
   })
 
 
